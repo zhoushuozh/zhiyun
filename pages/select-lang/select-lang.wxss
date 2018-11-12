@@ -1,0 +1,32 @@
+/* pages/select-lang/select-lang.wxss */
+
+.lang-item{
+    font-size: 32rpx;
+    color: #444;
+    line-height: 90rpx;
+    padding: 0 60rpx;
+    border-bottom: 1px solid #eee;
+}
+
+.lang-item .item-inner{
+    display: flex;
+    justify-content: space-between
+}
+
+.lang-item .item-inner.disable{
+    color: #ccc
+}
+
+.lang-item .item-inner icon{
+    display: none
+}
+
+
+.lang-item .item-inner.cur,.lang-item.view-hover .item-inner{
+    font-weight: 600;
+    color: #0099FF
+}
+
+.lang-item .item-inner.cur icon{
+    display: block
+}

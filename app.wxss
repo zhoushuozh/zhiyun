@@ -1,0 +1,9 @@
+/**app.wxss**/
+@import './assets/iconfont/iconfont.wxss'
+
+.container{
+    font-size: 28rpx;
+    color: #333;
+    min-height: 100vh;
+    background-color: #f1f1f1;
+}

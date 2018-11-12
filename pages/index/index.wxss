@@ -1,0 +1,161 @@
+/**index.wxss**/
+.lang-select-container{
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 40rpx;
+    line-height: 90rpx;
+    font-size: 32rpx;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    color: #999;
+    background-color: white;
+}
+
+.lang-select-container .icon-btn{
+    width: 30%;
+    background: linear-gradient(to right, transparent, white, transparent);
+    text-align: center;
+    position: relative;
+    z-index: 100
+}
+
+.lang-select-container .icon-btn .iconfont{
+    font-size: 40rpx;
+    color: #0099FF
+}
+
+.lang-select-container .icon-btn.disable .iconfont{
+    color: #ccc
+}
+
+.lang-select-container navigator{
+    width: 35%;
+}
+
+.icon-btn .iconfont{
+    font-size: 36rpx
+}
+
+.lang-select-button{
+    color: #0099FF
+}
+
+.lang-select-button icon{
+    font-size: 24rpx
+}
+
+.textarea{
+    box-sizing: border-box;
+    background-color: white;
+    padding: 40rpx;
+    box-shadow: 0 5rpx 15rpx rgba(0,0,0,0.1);
+    position: relative
+}
+
+.textarea .close-btn{
+    position: absolute;
+    top: 40rpx;
+    right: 40rpx;
+    z-index: 100
+}
+
+.textarea .close-btn .iconfont{
+    font-size: 40rpx;
+    color: #999
+}
+
+.textarea textarea {
+    width: 100%;
+    font-size: 36rpx;
+    line-height: 1.4em;
+    color: #444;
+    padding-right: 40rpx;
+    box-sizing: border-box
+}
+
+.result,.details-result{
+    box-sizing: border-box;
+    margin: 30rpx 20rpx;
+    padding: 40rpx;
+    border-radius: 10rpx
+}
+
+.result{
+    background-color: #0099FF;
+    color: white;
+    font-size: 36rpx;    
+}
+
+.result .result-button-groud{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40rpx
+}
+
+.result .result-button-groud .iconfont{
+    padding: 0 5rpx
+}
+
+.result .result-button-groud .right .iconfont{
+    margin-left: 20rpx;
+}
+
+.details-result{
+    background-color: white;
+    color: #444
+}
+
+.history-container{
+    padding: 30rpx 20rpx    
+}
+
+.history-inner{
+    background-color: white;
+    color: #444;
+    margin-top: 20rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+
+.history-inner .history-item{
+    line-height: 90rpx;
+    padding: 0 40rpx;
+    overflow-x: hidden;
+    position: relative;
+    padding-right: 80rpx;
+    text-overflow : ellipsis;
+    white-space: nowrap;
+    border-bottom: 1px  solid #eee;
+    font-size: 32rpx;
+}
+
+.history-inner .history-item .delet-history-btn{
+    position: absolute;
+    line-height: 90rpx;
+    top: 0;
+    right: 30rpx
+}
+
+.history-inner .history-item text{
+    margin-left: 15rpx
+}
+
+.history-inner .history-item .item-result{
+    color: #787878
+}
+
+.history-inner .history-item .iconfont{
+    color: #999;
+    font-size: 32rpx
+}
+
+.history-container .history-title{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10rpx;
+    color: #999
+}
+
+.history-container .history-title .clear-history{
+    color: #0099FF
+}

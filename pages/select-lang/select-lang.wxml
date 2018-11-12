@@ -1,0 +1,9 @@
+<!--pages/select-lang/select-lang.wxml-->
+<scroll-view>
+    <view class='lang-item' data-name='{{langItem.name}}' data-code='{{langItem.code}}' wx:for="{{langList}}" wx:key="langItem.code" wx:for-item="langItem" hover-class='view-hover' bindtap='onTapItem'>
+        <view class="item-inner {{langItem.code == curLang.code ? 'cur' : ' '}} {{langItem.code === opposeLang.code && origin === 'to' ? 'disable' : ''}}" wx:if="{{origin !== 'to' || langItem.code !== 'auto'}}">
+            <text>{{langItem.name}}</text>
+            <icon class='iconfont icon-duihao'></icon>
+        </view>
+    </view>
+</scroll-view>
