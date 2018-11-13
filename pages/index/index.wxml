@@ -1,3 +1,4 @@
+<wxs module="_filter" src="../../utils/filter.wxs"></wxs>
 <!--index.wxml-->
 <scroll-view class="container page-index">
     <view class="lang-select-container">
@@ -70,8 +71,8 @@
         <view class='history-inner'>
             <view class='history-item' wx:for="{{historyList}}" wx:key="index" wx:for-item="item" data-index="{{index}}" data-data="{{item}}" bindtap='clickHistoryItem'>
                 <icon class='iconfont icon-lishi'></icon>
-                <text class='item-query' wx:for="{{item.trans_result}}" wx:key="index" wx:for-item="queryItem">{{queryItem.src||item.query}}</text>
-                <text class='item-result' wx:for="{{item.trans_result}}" wx:key="index" wx:for-item="resultItem">{{resultItem.dst||resultItem}}</text>
+                <text class='item-query' wx:for="{{item.trans_result}}" wx:key="index" wx:for-item="queryItem">{{_filter.filterwrap(queryItem.src||item.query)}}</text>
+                <text class='item-result' wx:for="{{item.trans_result}}" wx:key="index" wx:for-item="resultItem">{{_filter.filterwrap(resultItem.dst||resultItem)}}</text>
                 <view class='delet-history-btn' catchtap='delHistoryItem' data-index="{{index}}">
                     <icon class='iconfont icon-close'></icon>
                 </view>

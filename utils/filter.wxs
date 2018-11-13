@@ -1,0 +1,9 @@
+var _filter = {
+    filterwrap: function(val){
+        console.log(val)
+        var reg = getRegExp("[\r\n]","g")
+        return val.replace(reg,' ')
+    }
+}
+
+module.exports.filterwrap = _filter.filterwrap
