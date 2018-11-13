@@ -49,7 +49,8 @@
     background-color: white;
     padding: 40rpx;
     box-shadow: 0 5rpx 15rpx rgba(0,0,0,0.1);
-    position: relative
+    position: relative;
+    transition: 0.3s
 }
 
 .textarea .close-btn{
@@ -73,11 +74,59 @@
     box-sizing: border-box
 }
 
-.result,.details-result{
+.textarea .srcPron{
+    width: 80rpx;
+    line-height: 60rpx;
+}
+
+.textarea .srcPron .iconfont{
+    color: #888;
+    font-size: 36rpx
+}
+
+.result,
+.details-result{
     box-sizing: border-box;
     margin: 30rpx 20rpx;
     padding: 40rpx;
     border-radius: 10rpx
+}
+
+.details-result .title{
+    font-size: 28rpx;
+    color: #333;
+    display: block;
+    margin-bottom: 20rpx;
+}
+
+.details-result .phonogram > view{
+    display: inline;
+    padding: 0rpx 20rpx 40rpx 0
+}
+
+.details-result .phonogram text{
+    padding: 10rpx
+}
+
+.details-result .inner {
+    font-size: 32rpx;
+}
+
+.details-result .inner .item {
+    display: block;
+    padding: 10rpx
+}
+
+.details-result .inner .item .src {
+    display: block;
+    margin-top: 10rpx;
+    margin-bottom: 20rpx;
+}
+
+.details-result .inner .item .dst{
+    color: #888;
+    font-style:italic;
+    padding-right: 10rpx
 }
 
 .result{
@@ -132,8 +181,10 @@
 .history-inner .history-item .delet-history-btn{
     position: absolute;
     line-height: 90rpx;
+    width: 80rpx;
+    text-align: center;
     top: 0;
-    right: 30rpx
+    right: 20rpx
 }
 
 .history-inner .history-item text{
@@ -157,5 +208,11 @@
 }
 
 .history-container .history-title .clear-history{
-    color: #0099FF
+    color: #0099FF;
+}
+
+.history-container .clear-history{
+    text-align: center;
+    font-size: 28rpx;
+    line-height: 90rpx;
 }

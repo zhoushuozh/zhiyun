@@ -7,25 +7,25 @@ Page({
         origin: '',
         opposeLang: {},
         curLang: {},
-        langList: app.globalData.langList,
+        langList: [],
     },
 
     onTapItem: function(event){
         let actLang =  event.currentTarget.dataset
         // 如果点击的目标语言和源语言相同，则不响应
         if (actLang.code === this.data.opposeLang.code && this.data.origin === 'to' ){
-            console.log(1)
            return
         } else if (actLang.code === this.data.opposeLang.code && this.data.origin === 'from') {
-            console.log(2)
             // 如果点击的语言和目标语言相同，则将目标语言设置成其他语言
             // 如果目标语言是中文，则设置成英文，如果是其他语言，则设置成英文
-            if (this.data.opposeLang.code === 'en'){
-                wx.setStorageSync('toLang', {"code": "zh", "name": "中文" })
-                app.globalData.toLang = {"code": "zh", "name": "中文" }
+            // this.data.langList[2] == 英文 ，this.data.langList[1] == 中文
+            let langCn = this.data.langList[1], langEn = this.data.langList[2]
+            if (this.data.opposeLang.code === langEn.code) {
+                wx.setStorageSync('toLang', langCn)
+                app.globalData.toLang = langCn
             } else {
-                wx.setStorageSync('toLang', { "name": "英语", "code": "en" })
-                app.globalData.toLang = { "name": "英语", "code": "en" }
+                wx.setStorageSync('toLang', langEn)
+                app.globalData.toLang = langEn
             }
         }
         wx.setStorageSync(this.data.origin + 'Lang', actLang)
@@ -40,7 +40,10 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.setData({ origin: options.origin })
+        this.setData({
+            origin: options.origin,
+            langList: app.globalData[`${app.globalData.api}_langList`]
+        })
         if (options.origin === 'from'){
             this.setData({ 
                 title: '源语言', 

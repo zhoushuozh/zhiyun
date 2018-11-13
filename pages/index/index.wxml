@@ -18,15 +18,18 @@
     <view class='textarea'>
         <view class='icon-btn close-btn' wx:if="{{queryText.length > 0}}" bindtap="clearQuery"><icon class='iconfont icon-close'></icon></view>
         <textarea placeholder="输入要翻译的文本" maxlength="2048" value="{{queryText}}" bindinput="onInput" />
+        <view class="srcPron" wx:if="{{complete}}">
+            <icon class="iconfont {{srcAudioPlay ? 'icon-stop' : 'icon-sound'}}" bindtap='playSrcPron'></icon>
+        </view>
     </view>
     <view class='result' wx:if="{{translating || complete}}">
         <view class='result-inner' wx:if="{{ !translating && complete }}">
-            <text wx:for="{{transResult}}" wx:key="*this" wx:for-item="resultItem">{{resultItem.dst}}</text>
+            <text wx:for="{{transResult}}" wx:key="*this" wx:for-item="resultItem">{{resultItem.dst || resultItem}}</text>
         </view>
         <text class='result-text' wx:if="{{ translating }}">正在翻译...</text>
         <view class='result-button-groud'>
             <view class='left icon-btn'>
-                <icon class='iconfont icon-sound' bindtap='playResPron'></icon>
+                <icon class="iconfont {{dstAudioPlay ? 'icon-stop' : 'icon-sound'}}" bindtap='playResPron'></icon>
             </view>
             <view class='right icon-btn'>
                 <!-- <icon class='iconfont icon-collection'></icon> -->
@@ -34,23 +37,46 @@
             </view>
         </view>
     </view>
-    <!-- <view class='details-result' wx:if="{{ complete }}">
-        详细结果
-    </view> -->
+    <view class='details-result basic' wx:if="{{ complete && detailsResult.basic}}">
+        <text class="title">详细释义</text>
+        <view class="inner">
+            <view class="phonogram">
+                <view wx:if="{{detailsResult.basic['uk-phonetic']}}">
+                    <text class="iconfont {{ukAudioPlay ? 'icon-stop' : 'icon-sound'}}" bindtap='playUkPron'></text>
+                    <text>英 [ {{detailsResult.basic['uk-phonetic']}} ]</text>
+                </view>
+                <view wx:if="{{detailsResult.basic['us-phonetic']}}">
+                    <text class="iconfont {{usAudioPlay ? 'icon-stop' : 'icon-sound'}}" bindtap='playUsPron'></text>
+                    <text>美 [ {{detailsResult.basic['us-phonetic']}} ]</text>
+                </view>
+            </view>
+            <text class="item" wx:for="{{detailsResult.basic.explains}}" wx:key="*this" wx:for-item="item">{{item}}</text>
+        </view>
+    </view>
+    <view class='details-result web' wx:if="{{ complete && detailsResult.web}}">
+        <text class="title">网络释义</text>
+        <view class="inner">
+            <view class="item" wx:for="{{detailsResult.web}}" wx:key="item.key" wx:for-item="item">
+                <text class="src">{{item.key}}</text>
+                <text class="dst" wx:for="{{item.value}}" wx:key="index" wx:for-item="valItem">{{valItem}}; </text>
+            </view>
+        </view>
+    </view>
     <view class='history-container' wx:if="{{!translating && !complete && historyList.length > 0}}">
-        <view class='history-title'>
+        <!--<view class='history-title'>
             <text class='title'>历史记录</text>
             <text class='clear-history' bindtap='clearHistory'>清空</text>
-        </view>
+        </view>-->
         <view class='history-inner'>
             <view class='history-item' wx:for="{{historyList}}" wx:key="index" wx:for-item="item" data-index="{{index}}" data-data="{{item}}" bindtap='clickHistoryItem'>
                 <icon class='iconfont icon-lishi'></icon>
-                <text class='item-query' wx:for="{{item.trans_result}}" wx:key="index" wx:for-item="queryItem">{{queryItem.src}}</text>
-                <text class='item-result' wx:for="{{item.trans_result}}" wx:key="index" wx:for-item="resultItem">{{resultItem.dst}}</text>
+                <text class='item-query' wx:for="{{item.trans_result}}" wx:key="index" wx:for-item="queryItem">{{queryItem.src||item.query}}</text>
+                <text class='item-result' wx:for="{{item.trans_result}}" wx:key="index" wx:for-item="resultItem">{{resultItem.dst||resultItem}}</text>
                 <view class='delet-history-btn' catchtap='delHistoryItem' data-index="{{index}}">
                     <icon class='iconfont icon-close'></icon>
                 </view>
             </view>
+            <view class='clear-history' bindtap='clearHistory'>清空所有历史</view>
         </view>
     </view>
 </scroll-view>

@@ -42,8 +42,8 @@ function _throttle(fn, interval) {
     };
 }
 
-// 翻译
-function _translate(q, {from = "atuo", to}) {
+// 百度翻译
+function b_translate(q, {from = "atuo", to}) {
     return new Promise((resolve, reject) => {
         let salt = Date.now()
         let sign = md5(`${appid}${q}${salt}${key}`)
@@ -81,6 +81,55 @@ function _translate(q, {from = "atuo", to}) {
     })
 }
 
+
+const yd_appid = '546e5ec5ebf651ca'
+const yd_key = 'A6hWbZcjTIdwJffyRrfVL0OzdB7LGhcs'
+
+// 有道翻译
+function y_translate(q, { from = "atuo", to = "auto" }) {
+    return new Promise((resolve, reject) => {
+        let salt = Date.now()
+        let appKey = yd_appid
+        let sign = md5(`${yd_appid}${q}${salt}${yd_key}`)
+        let ext = 'mp3'
+        let voice = 0
+        wx.request({
+            url: 'https://openapi.youdao.com/api',
+            data: {
+                q,
+                from,
+                to,
+                appKey,
+                salt,
+                sign,
+                ext,
+                voice
+            },
+            success(res) {
+                if (res.data.errorCode === '0') {
+                    resolve(res.data)
+                } else {
+                    reject({ status: 'error', msg: '翻译失败' })
+                    wx.showToast({
+                        title: '翻译失败',
+                        icon: 'none',
+                        duration: 3000
+                    })
+                }
+            },
+            fail() {
+                reject({ status: 'error', msg: '翻译失败' })
+                wx.showToast({
+                    title: '网络异常',
+                    icon: 'none',
+                    duration: 3000
+                })
+            }
+        })
+    })
+}
+
 module.exports._debounce = _debounce
 module.exports._throttle = _throttle
-module.exports._translate = _translate
+module.exports.b_translate = b_translate
+module.exports.y_translate = y_translate

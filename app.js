@@ -1,13 +1,15 @@
 //app.js
 App({
   onLaunch: function () {
-      this.globalData.fromLang = wx.getStorageSync("fromLang") || this.globalData.langList[0]
-      this.globalData.toLang = wx.getStorageSync("toLang") || this.globalData.langList[1]
+      this.globalData.fromLang = wx.getStorageSync("fromLang") || this.globalData[`${this.globalData.api}_langList`][0]
+      this.globalData.toLang = wx.getStorageSync("toLang") || this.globalData[`${this.globalData.api}_langList`][1]
   },
   globalData: {
     fromLang: {},
     toLang: {},
-    langList: [
+    // y == 有道, b == 百度
+    api: 'y',
+    b_langList: [
         {
             "code":"auto",
             "name":"自动检测"
@@ -18,7 +20,7 @@ App({
         },
         {
             "code": "en",
-            "name": "英语"
+            "name": "英文"
         },
         {
             "code": "cht",
@@ -83,6 +85,59 @@ App({
         {
             "code": "nl",
             "name": "荷兰语"
+        }
+    ],
+    y_langList: [{
+            "code": "auto",
+            "name": "自动检测"
+        },
+        {
+            "code": "zh-CHS",
+            "name": "中文"
+        },
+        {
+            "code": "EN",
+            "name": "英文"
+        },
+        {
+            "code": "ja",
+            "name": "日文"
+        },
+        {
+            "code": "ko",
+            "name": "韩文"
+        },
+        {
+            "code": "ru",
+            "name": "法文"
+        },
+        {
+            "code": "fr",
+            "name": "俄文"
+        },
+        {
+            "code": "pt",
+            "name": "葡萄牙文"
+        },
+        {
+            "code": "es",
+            "name": "西班牙文"
+        },
+        {
+            "code": "vi",
+            "name": "越南文"
+        },
+        {
+            "code": "de",
+            "name": "德文"
+        },
+        {
+            "code": "ar",
+            "name": "阿拉伯文"
+        },
+        {
+            "code": "id",
+            "name": "印尼文"
         }
     ]
   }
