@@ -67,8 +67,10 @@
 
 .textarea textarea {
     width: 100%;
-    font-size: 36rpx;
-    line-height: 1.4em;
+    font-size: 40rpx;
+    line-height: 1.5em;
+    min-height: 6em;
+    max-height: 15em;
     color: #444;
     padding-right: 40rpx;
     box-sizing: border-box
@@ -90,6 +92,11 @@
     margin: 30rpx 20rpx;
     padding: 40rpx;
     border-radius: 10rpx
+}
+
+.result .result-inner{
+    word-wrap:break-word;
+    font-size: 40rpx
 }
 
 .details-result .title{
@@ -161,7 +168,7 @@
 .history-inner{
     background-color: white;
     color: #444;
-    margin-top: 20rpx;
+    /* margin-top: 20rpx; */
     border-radius: 10rpx;
     overflow: hidden;
 }
