@@ -264,12 +264,28 @@ Page({
     playResPron(){
         if (this.data.detailsResult.tSpeakUrl) {
             const resAudio = wx.getBackgroundAudioManager()
+            resAudio.onPlay(() => { this.setData({ dstAudioPlay: true }) })
+            resAudio.onEnded(() => { this.setData({ dstAudioPlay: false }) })
+            resAudio.onStop(() => { this.setData({ dstAudioPlay: false }) })
+            resAudio.onPause(() => { this.setData({ dstAudioPlay: false }) })
+            resAudio.onError((res) => {
+                let errMsg = ''
+                console.log(res)
+                if (res.errCode === 10004) {
+                    errMsg = '10004：未知格式 \n 不要问我为什么，这是微信的bug。'
+                } else {
+                    errMsg = `未知错误：${res.errCod} ${res.errMsg}`
+                }
+                wx.showToast({
+                    title: errMsg,
+                    icon: 'none',
+                    duration: 3000
+                })
+            })
+
             if (resAudio.paused === undefined || resAudio.paused) {
                 resAudio.src = this.data.detailsResult.tSpeakUrl
-                resAudio.onPlay(()=>{this.setData({dstAudioPlay: true})})
-                resAudio.onEnded(()=>{this.setData({dstAudioPlay: false})})
-                resAudio.onStop(()=>{this.setData({dstAudioPlay: false})})
-                resAudio.onPause(()=>{this.setData({dstAudioPlay: false})})
+                resAudio.play()
             } else {
                 resAudio.stop()
             }
@@ -284,12 +300,29 @@ Page({
     playSrcPron() {
         if (this.data.detailsResult.speakUrl) {
             const srcAudio = wx.getBackgroundAudioManager()
+
+            srcAudio.onPlay(() => { this.setData({ srcAudioPlay: true }) })
+            srcAudio.onEnded(() => { this.setData({ srcAudioPlay: false }) })
+            srcAudio.onStop(() => { this.setData({ srcAudioPlay: false }) })
+            srcAudio.onPause(() => { this.setData({ srcAudioPlay: false }) })
+            srcAudio.onError((res) => {
+                let errMsg = ''
+                console.log(res)
+                if (res.errCode === 10004) {
+                    errMsg = '10004：未知格式 \n 不要问我为什么，这是微信的bug。'
+                } else {
+                    errMsg = `未知错误：${res.errCod} ${res.errMsg}`
+                }
+                wx.showToast({
+                    title: errMsg,
+                    icon: 'none',
+                    duration: 3000
+                })
+            })
+
             if (srcAudio.paused === undefined || srcAudio.paused) {
                 srcAudio.src = this.data.detailsResult.speakUrl
-                srcAudio.onPlay(() => {this.setData({srcAudioPlay: true})})
-                srcAudio.onEnded(() => {this.setData({srcAudioPlay: false})})
-                srcAudio.onStop(() => {this.setData({srcAudioPlay: false})})
-                srcAudio.onPause(() => {this.setData({srcAudioPlay: false})})
+                srcAudio.play()
             } else {
                 srcAudio.stop()
             }
@@ -313,7 +346,7 @@ Page({
                 let errMsg = ''
                 console.log(res)
                 if (res.errCode === 10004) {
-                    errMsg = '10004：未知格式。如果你发音播放不了，不要问我为什么，我也不知道为什么，可能是微信的bug。'
+                    errMsg = '10004：未知格式 \n 不要问我为什么，这是微信的bug。'
                 } else {
                     errMsg = `未知错误：${res.errCod} ${res.errMsg}`
                 }
@@ -349,7 +382,7 @@ Page({
                 let errMsg = ''
                 console.log(res)
                 if(res.errCode === 10004){
-                    errMsg = '10004：未知格式。如果你发音播放不了，不要问我为什么，我也不知道为什么，可能是微信的bug。'
+                    errMsg = '10004：未知格式 \n 不要问我为什么，这是微信的bug。'
                 } else {
                     errMsg = `未知错误：${res.errCod} ${res.errMsg}`
                 }
