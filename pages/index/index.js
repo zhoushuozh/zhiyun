@@ -124,7 +124,7 @@ Page({
                             translating: false,
                             complete: true
                         })
-                        // console.log(this.data.detailsResult.basic['uk-phonetic'])
+                        console.log(this.data.detailsResult.basic['uk-phonetic'])
                         if (this.data.fromLang.code === 'auto') {
                             let autoName = '检测到' + result.from.name;
                             this.setData({
@@ -134,7 +134,7 @@ Page({
                                 }
                             })
                         }
-                        // console.log(res)
+                        console.log(res)
                         // return
                         // 存储历史
                         let history = wx.getStorageSync('history') || []
@@ -240,7 +240,7 @@ Page({
     copyResult(){
         let copyText = '';
         this.data.transResult.forEach(item => {
-            copyText += item.dst || item
+            copyText = item.dst || item
         })
         // console.log(copyText)
         wx.setClipboardData({
@@ -358,7 +358,10 @@ Page({
             })
             if (usAudio.paused === undefined || usAudio.paused){
                 usAudio.src = this.data.detailsResult.basic['us-speech']
-                usAudio.play()
+                usAudio.onPlay(() => {this.setData({usAudioPlay: true})})
+                usAudio.onEnded(() => {this.setData({usAudioPlay: false})})
+                usAudio.onStop(() => {this.setData({usAudioPlay: false})})
+                usAudio.onPause(() => {this.setData({usAudioPlay: false})})
             } else {
                 usAudio.stop()
             }
@@ -395,7 +398,10 @@ Page({
             // console.log(ukAudio.paused)
             if (ukAudio.paused === undefined || ukAudio.paused) {
                 ukAudio.src = this.data.detailsResult.basic['uk-speech']
-                ukAudio.play()
+                ukAudio.onPlay(() => {this.setData({ukAudioPlay: true})})
+                ukAudio.onEnded(() => {this.setData({ukAudioPlay: false})})
+                ukAudio.onStop(() => {this.setData({ ukAudioPlay: false})})
+                ukAudio.onPause(() => {this.setData({ukAudioPlay: false})})
             } else {
                 ukAudio.stop()
             }
@@ -403,7 +409,7 @@ Page({
             wx.showToast({
                 title: '暂无发音',
                 icon: 'none',
-                duration: 3000
+                duration: 2000
             })
         }
     }
