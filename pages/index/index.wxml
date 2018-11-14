@@ -18,7 +18,7 @@
     </view>
     <view class='textarea'>
         <view class='icon-btn close-btn' wx:if="{{queryText.length > 0}}" bindtap="clearQuery"><icon class='iconfont icon-close'></icon></view>
-        <textarea placeholder="输入要翻译的文本" maxlength="2048" value="{{queryText}}" bindinput="onInput" />
+        <textarea placeholder="输入要翻译的文本" auto-height maxlength="2048" value="{{queryText}}" bindinput="onInput" />
         <view class="srcPron" wx:if="{{complete}}">
             <icon class="iconfont {{srcAudioPlay ? 'icon-stop' : 'icon-sound'}}" bindtap='playSrcPron'></icon>
         </view>
