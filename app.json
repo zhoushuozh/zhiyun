@@ -1,13 +1,14 @@
 {
-    "pages": [
-        "pages/index/index",
-        "pages/history/history",
-        "pages/select-lang/select-lang"
-    ],
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#0099FF",
-        "navigationBarTitleText": "知云翻译",
-        "navigationBarTextStyle": "white"
-    }
+  "pages": [
+    "pages/index/index",
+    "pages/history/history",
+    "pages/select-lang/select-lang"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0099FF",
+    "navigationBarTitleText": "知云翻译",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json"
 }

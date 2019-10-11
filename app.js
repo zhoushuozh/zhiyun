@@ -96,7 +96,7 @@ App({
             "name": "中文"
         },
         {
-            "code": "EN",
+            "code": "en",
             "name": "英文"
         },
         {

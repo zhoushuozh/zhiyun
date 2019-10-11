@@ -17,10 +17,10 @@
         </navigator>
     </view>
     <view class='textarea'>
-        <view class='icon-btn close-btn' wx:if="{{queryText.length > 0}}" bindtap="clearQuery"><icon class='iconfont icon-close'></icon></view>
+        <view class='icon-btn close-btn' wx:if="{{queryText.length > 0}}" bindtap="onClearQuery"><icon class='iconfont icon-close'></icon></view>
         <textarea placeholder="输入要翻译的文本" maxlength="2048" value="{{queryText}}" bindinput="onInput" />
         <view class="srcPron" wx:if="{{complete}}">
-            <icon class="iconfont {{srcAudioPlay ? 'icon-stop' : 'icon-sound'}}" bindtap='playSrcPron'></icon>
+          <text class="iconfont {{audioState.speakUrl ? 'icon-stop' : 'icon-sound'}}" data-audiokey="speakUrl" bindtap="playPronunciation"></text>
         </view>
     </view>
     <view class='result' wx:if="{{translating || complete}}">
@@ -30,11 +30,11 @@
         <text class='result-text' wx:if="{{ translating }}">正在翻译...</text>
         <view class='result-button-groud'>
             <view class='left icon-btn'>
-                <icon class="iconfont {{dstAudioPlay ? 'icon-stop' : 'icon-sound'}}" bindtap='playResPron'></icon>
+              <text class="iconfont {{audioState.tSpeakUrl ? 'icon-stop' : 'icon-sound'}}" data-audiokey="tSpeakUrl" bindtap="playPronunciation"></text>
             </view>
             <view class='right icon-btn'>
-                <!-- <icon class='iconfont icon-collection'></icon> -->
-                <icon class='iconfont icon-copy' bindtap='copyResult'></icon>
+                <!-- <icon class='iconfont icon-collection' bindtap='onCollection'></icon> -->
+                <icon class='iconfont icon-copy' bindtap='onCopyResult'></icon>
             </view>
         </view>
     </view>
@@ -43,11 +43,11 @@
         <view class="inner">
             <view class="phonogram">
                 <view wx:if="{{detailsResult.basic['uk-phonetic']}}">
-                    <text class="iconfont {{ukAudioPlay ? 'icon-stop' : 'icon-sound'}}" bindtap='playUkPron'></text>
+                    <text class="iconfont {{audioState['uk-speech'] ? 'icon-stop' : 'icon-sound'}}" data-audiokey="uk-speech" bindtap="playPronunciation"></text>
                     <text>英 [ {{detailsResult.basic['uk-phonetic']}} ]</text>
                 </view>
                 <view wx:if="{{detailsResult.basic['us-phonetic']}}">
-                    <text class="iconfont {{usAudioPlay ? 'icon-stop' : 'icon-sound'}}" bindtap='playUsPron'></text>
+                    <text class="iconfont {{audioState['us-speech'] ? 'icon-stop' : 'icon-sound'}}" data-audiokey='us-speech' bindtap="playPronunciation"></text>
                     <text>美 [ {{detailsResult.basic['us-phonetic']}} ]</text>
                 </view>
             </view>
@@ -64,20 +64,18 @@
         </view>
     </view>
     <view class='history-container' wx:if="{{!translating && !complete && historyList.length > 0}}">
-        <!--<view class='history-title'>
-            <text class='title'>历史记录</text>
-            <text class='clear-history' bindtap='clearHistory'>清空</text>
-        </view>-->
         <view class='history-inner'>
-            <view class='history-item' wx:for="{{historyList}}" wx:key="index" wx:for-item="item" data-index="{{index}}" data-data="{{item}}" bindtap='clickHistoryItem'>
+            <mp-slideview class='history-item' wx:for="{{historyList}}" wx:key="index" wx:for-item="item" buttons="{{item.slideButtons}}" icon="{{true}}" bindbuttontap="slideButtonTap" ext-class="slideBtn">
+              <view class="history-item-inner" data-index="{{index}}" data-data="{{item}}" bindtap='onClickHistoryItem'>
                 <icon class='iconfont icon-lishi'></icon>
                 <text class='item-query' wx:for="{{item.trans_result}}" wx:key="index" wx:for-item="queryItem">{{_filter.filterwrap(queryItem.src||item.query)}}</text>
                 <text class='item-result' wx:for="{{item.trans_result}}" wx:key="index" wx:for-item="resultItem">{{_filter.filterwrap(resultItem.dst||resultItem)}}</text>
-                <view class='delet-history-btn' catchtap='delHistoryItem' data-index="{{index}}">
+                <!-- <view class='delet-history-btn' catchtap='onDelHistoryItem' data-index="{{index}}">
                     <icon class='iconfont icon-close'></icon>
-                </view>
-            </view>
-            <view class='clear-history' bindtap='clearHistory'>清空所有历史</view>
+                </view> -->
+              </view>
+            </mp-slideview>
+            <view class='history-item clear-history' bindtap='onClearHistory'>清空所有历史</view>
         </view>
     </view>
 </scroll-view>

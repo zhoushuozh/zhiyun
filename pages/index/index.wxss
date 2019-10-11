@@ -1,218 +1,227 @@
 /**index.wxss**/
-.lang-select-container{
-    display: flex;
-    box-sizing: border-box;
-    padding: 0 40rpx;
-    line-height: 90rpx;
-    font-size: 32rpx;
-    justify-content: space-between;
-    border-bottom: 1px solid #eee;
-    color: #999;
-    background-color: white;
+
+.lang-select-container {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 32rpx;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  color: #999;
+  background-color: white;
 }
 
-.lang-select-container .icon-btn{
-    width: 30%;
-    background: linear-gradient(to right, transparent, white, transparent);
-    text-align: center;
-    position: relative;
-    z-index: 100
+.lang-select-container .icon-btn {
+  width: 30%;
+  background: linear-gradient(to right, transparent, white, transparent);
+  text-align: center;
+  position: relative;
+  z-index: 100;
 }
 
-.lang-select-container .icon-btn .iconfont{
-    font-size: 40rpx;
-    color: #0099FF
+.lang-select-container .icon-btn .iconfont {
+  font-size: 40rpx;
+  color: #09f;
 }
 
-.lang-select-container .icon-btn.disable .iconfont{
-    color: #ccc
+.lang-select-container .icon-btn.disable .iconfont {
+  color: #ccc;
 }
 
-.lang-select-container navigator{
-    width: 35%;
+.lang-select-container navigator {
+  width: 35%;
 }
 
-.icon-btn .iconfont{
-    font-size: 36rpx
+.icon-btn .iconfont {
+  font-size: 36rpx;
 }
 
-.lang-select-button{
-    color: #0099FF
+.lang-select-button {
+  color: #09f;
 }
 
-.lang-select-button icon{
-    font-size: 24rpx
+.lang-select-button icon {
+  font-size: 24rpx;
 }
 
-.textarea{
-    box-sizing: border-box;
-    background-color: white;
-    padding: 40rpx;
-    box-shadow: 0 5rpx 15rpx rgba(0,0,0,0.1);
-    position: relative;
-    transition: 0.3s
+.textarea {
+  box-sizing: border-box;
+  background-color: white;
+  padding: 40rpx;
+  box-shadow: 0 5rpx 15rpx rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: 0.3s;
 }
 
-.textarea .close-btn{
-    position: absolute;
-    top: 40rpx;
-    right: 40rpx;
-    z-index: 100
+.textarea .close-btn {
+  position: absolute;
+  top: 40rpx;
+  right: 40rpx;
+  z-index: 100;
 }
 
-.textarea .close-btn .iconfont{
-    font-size: 40rpx;
-    color: #999
+.textarea .close-btn .iconfont {
+  font-size: 40rpx;
+  color: #999;
 }
 
 .textarea textarea {
-    width: 100%;
-    font-size: 36rpx;
-    line-height: 1.4em;
-    color: #444;
-    padding-right: 40rpx;
-    box-sizing: border-box
+  width: 100%;
+  font-size: 36rpx;
+  line-height: 1.4em;
+  color: #444;
+  padding-right: 40rpx;
+  box-sizing: border-box;
 }
 
-.textarea .srcPron{
-    width: 80rpx;
-    line-height: 60rpx;
+.textarea .srcPron {
+  width: 80rpx;
+  line-height: 60rpx;
 }
 
-.textarea .srcPron .iconfont{
-    color: #888;
-    font-size: 36rpx
+.textarea .srcPron .iconfont {
+  color: #888;
+  font-size: 36rpx;
 }
 
-.result,
-.details-result{
-    box-sizing: border-box;
-    margin: 30rpx 20rpx;
-    padding: 40rpx;
-    border-radius: 10rpx
+.result, .details-result {
+  box-sizing: border-box;
+  margin: 30rpx 20rpx;
+  padding: 40rpx;
+  border-radius: 16rpx;
 }
 
-.details-result .title{
-    font-size: 28rpx;
-    color: #333;
-    display: block;
-    margin-bottom: 20rpx;
+.details-result .title {
+  font-size: 28rpx;
+  color: #333;
+  display: block;
+  margin-bottom: 20rpx;
 }
 
-.details-result .phonogram > view{
-    display: inline;
-    padding: 0rpx 20rpx 40rpx 0
+.details-result .phonogram > view {
+  display: inline;
+  padding: 0rpx 20rpx 40rpx 0;
 }
 
-.details-result .phonogram text{
-    padding: 10rpx
+.details-result .phonogram text {
+  padding: 10rpx;
 }
 
 .details-result .inner {
-    font-size: 32rpx;
+  font-size: 32rpx;
 }
 
 .details-result .inner .item {
-    display: block;
-    padding: 10rpx
+  display: block;
+  padding: 10rpx;
 }
 
 .details-result .inner .item .src {
-    display: block;
-    margin-top: 10rpx;
-    margin-bottom: 20rpx;
+  display: block;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
 }
 
-.details-result .inner .item .dst{
-    color: #888;
-    font-style:italic;
-    padding-right: 10rpx
+.details-result .inner .item .dst {
+  color: #888;
+  font-style: italic;
+  padding-right: 10rpx;
 }
 
-.result{
-    background-color: #0099FF;
-    color: white;
-    font-size: 36rpx;    
+.result {
+  background-color: #09f;
+  color: white;
+  font-size: 36rpx;
 }
 
-.result .result-button-groud{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40rpx
+.result .result-button-groud {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40rpx;
 }
 
-.result .result-button-groud .iconfont{
-    padding: 0 5rpx
+.result .result-button-groud .iconfont {
+  padding: 0 5rpx;
 }
 
-.result .result-button-groud .right .iconfont{
-    margin-left: 20rpx;
+.result .result-button-groud .right .iconfont {
+  margin-left: 20rpx;
 }
 
-.details-result{
-    background-color: white;
-    color: #444
+.details-result {
+  background-color: white;
+  color: #444;
 }
 
-.history-container{
-    padding: 30rpx 20rpx    
+.history-container {
+  padding: 30rpx 20rpx;
 }
 
-.history-inner{
-    background-color: white;
-    color: #444;
-    margin-top: 20rpx;
-    border-radius: 10rpx;
-    overflow: hidden;
+.history-inner {
+  color: #444;
+  margin-top: 20rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
 }
 
-.history-inner .history-item{
-    line-height: 90rpx;
-    padding: 0 40rpx;
-    overflow-x: hidden;
-    position: relative;
-    padding-right: 80rpx;
-    text-overflow : ellipsis;
-    white-space: nowrap;
-    border-bottom: 1px  solid #eee;
-    font-size: 32rpx;
+.history-inner .history-item, .weui-slideview{
+  background-color: white;
+  border-bottom: 1px solid #eee;
 }
 
-.history-inner .history-item .delet-history-btn{
-    position: absolute;
-    line-height: 90rpx;
-    width: 80rpx;
-    text-align: center;
-    top: 0;
-    right: 20rpx
+.history-inner .history-item-inner{
+  line-height: 100rpx;
+  padding: 0 40rpx;
+  overflow-x: hidden;
+  position: relative;
+  padding-right: 80rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 32rpx;
 }
 
-.history-inner .history-item text{
-    margin-left: 15rpx
+.slideBtn .iconfont{
+  color: #aaa
 }
 
-.history-inner .history-item .item-result{
-    color: #787878
+.history-inner .history-item .delet-history-btn {
+  position: absolute;
+  line-height: 100rpx;
+  width: 80rpx;
+  text-align: center;
+  top: 0;
+  right: 20rpx;
 }
 
-.history-inner .history-item .iconfont{
-    color: #999;
-    font-size: 32rpx
+.history-inner .history-item text {
+  margin-left: 15rpx;
 }
 
-.history-container .history-title{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10rpx;
-    color: #999
+.history-inner .history-item .item-result {
+  color: #787878;
 }
 
-.history-container .history-title .clear-history{
-    color: #0099FF;
+.history-inner .history-item .iconfont {
+  color: #999;
+  font-size: 32rpx;
 }
 
-.history-container .clear-history{
-    text-align: center;
-    font-size: 28rpx;
-    line-height: 90rpx;
+.history-container .history-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10rpx;
+  color: #999;
+}
+
+.history-container .history-title .clear-history {
+  color: #09f;
+}
+
+.history-container .clear-history {
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 100rpx;
+  color: #f60;
 }

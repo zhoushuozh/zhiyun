@@ -13,6 +13,8 @@
 	"appid": "wxb580298690925bfd",
 	"projectname": "fanyi",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
