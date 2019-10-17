@@ -1,4 +1,6 @@
 {
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true,
   "usingComponents": {
     "mp-slideview": "../../components/slideview/slideview"
   }

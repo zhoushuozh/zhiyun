@@ -133,10 +133,10 @@ Component({
 
             var query = wx.createSelectorQuery().in(this);
             query.select('.left').boundingClientRect(function (res) {
-                console.log('right res', res);
+                // console.log('right res', res);
                 var btnQuery = wx.createSelectorQuery().in(_this);
                 btnQuery.selectAll('.btn').boundingClientRect(function (rects) {
-                    console.log('btn rects', rects);
+                    // console.log('btn rects', rects);
                     _this.setData({
                         size: {
                             buttons: rects,

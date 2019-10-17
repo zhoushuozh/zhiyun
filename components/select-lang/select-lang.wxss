@@ -1,17 +1,4 @@
-/**app.wxss**/
-@import './assets/iconfont/iconfont.wxss'
-
-.container{
-    font-size: 28rpx;
-    color: #333;
-    min-height: 100vh;
-    background-color: #f1f1f1;
-}
-
-.top-container{
-  background: white;
-  box-shadow: 0 5rpx 15rpx rgba(0, 0, 0, 0.1);
-}
+/* components/selectlang/selectlang.wxss */
 
 .lang-select-container {
   display: flex;

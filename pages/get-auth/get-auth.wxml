@@ -1,0 +1,5 @@
+<!--pages/get-auth/get-auth.wxml-->
+<view class="login-container" wx:if="{{!authorized}}">
+  <button wx:if="{{canIUse}}" type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+  <view wx:else>请升级微信版本</view>
+</view>

@@ -1,0 +1,112 @@
+/* pages/translate/translate.wxss */
+.textarea {
+  box-sizing: border-box;
+  background-color: white;
+  padding: 40rpx;
+  position: relative;
+  transition: 0.3s;
+}
+
+.textarea .close-btn {
+  position: absolute;
+  top: 40rpx;
+  right: 40rpx;
+  z-index: 100;
+}
+
+.textarea .close-btn .iconfont {
+  font-size: 40rpx;
+  color: #999;
+}
+
+.textarea textarea {
+  width: 100%;
+  font-size: 36rpx;
+  line-height: 1.4em;
+  color: #444;
+  padding-right: 40rpx;
+  box-sizing: border-box;
+}
+
+.textarea .srcPron {
+  width: 80rpx;
+  line-height: 60rpx;
+}
+
+.textarea .srcPron .iconfont {
+  color: #888;
+  font-size: 36rpx;
+}
+
+.result, .details-result {
+  box-sizing: border-box;
+  margin: 30rpx 20rpx;
+  padding: 40rpx;
+  border-radius: 16rpx;
+}
+
+.details-result .title {
+  font-size: 28rpx;
+  color: #333;
+  display: block;
+  margin-bottom: 20rpx;
+}
+
+.details-result .phonogram > view {
+  display: inline;
+  padding: 0rpx 20rpx 40rpx 0;
+}
+
+.details-result .phonogram text {
+  padding: 10rpx;
+}
+
+.details-result .inner {
+  font-size: 32rpx;
+}
+
+.details-result .inner .item {
+  display: block;
+  padding: 10rpx;
+}
+
+.details-result .inner .item .src {
+  display: block;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.details-result .inner .item .dst {
+  color: #888;
+  font-style: italic;
+  padding-right: 10rpx;
+}
+
+.result {
+  background-color: #09f;
+  color: white;
+  font-size: 36rpx;
+}
+
+.result .result-button-groud {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40rpx;
+}
+
+.result .result-button-groud .iconfont {
+  padding: 0 5rpx;
+}
+
+.result .result-button-groud .right .iconfont {
+  margin-left: 20rpx;
+}
+
+.result .icon-star-active{
+  color: #f4ea2a;
+}
+
+.details-result {
+  background-color: white;
+  color: #444;
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "name": "hello",
+    "value": {
+      "lang": "en2zh-CHS",
+      "queryText": "hello",
+      "transResult": "你好",
+      "md5Val": "975891e9b0ce78e0438f8db0c805b490"
+    }
+  }
+]

@@ -1,0 +1,7 @@
+<!--components/empty-data/empty-data.wxml-->
+<view class="empty-data {{extClass}}">
+  <view class="img">
+    <cover-image src="../static/img/empty-data.png"></cover-image>
+  </view>
+  <view class="text">{{text}}</view>
+</view>

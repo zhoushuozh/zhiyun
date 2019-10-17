@@ -1,0 +1,19 @@
+/* components/empty-data/empty-data.wxss */
+.empty-data{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  padding: 200rpx 0;
+}
+
+.empty-data .img{
+  width: 240rpx
+}
+
+.empty-data .text{
+  line-height: 1.5em;
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  color: #999;
+}

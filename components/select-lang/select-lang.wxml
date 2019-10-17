@@ -1,0 +1,18 @@
+<!--components/selectlang/selectlang.wxml-->
+<view class="lang-select-container">
+  <navigator class='lang-select-button' url="../select-lang/select-lang?origin=from">
+    <view animation="{{selectLangLeft}}">
+      {{fromLang.name}}
+      <icon class='iconfont icon-triangle-down'></icon>
+    </view>
+  </navigator>
+  <view class="icon-btn exchange-btn {{fromLang.code === 'auto' ? 'disable': ''}}" bindtap="exchangeLang">
+    <icon class='iconfont icon-exchange'></icon>
+  </view>
+  <navigator class='lang-select-button' url="../select-lang/select-lang?origin=to" style='text-align: right' animation="selectLangRight">
+    <view animation="{{selectLangRight}}">
+      {{toLang.name}}
+      <icon class='iconfont icon-triangle-down'></icon>
+    </view>
+  </navigator>
+</view>

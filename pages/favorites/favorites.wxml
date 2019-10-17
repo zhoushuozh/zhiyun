@@ -1,0 +1,25 @@
+<!--pages/favorites/favorites.wxml-->
+<wxs module="_filter" src="../../utils/filter.wxs"></wxs>
+<scroll-view class="container">
+  <view class="user-info" wx:if="userName && avatarSrc">
+    <view class="left">
+      <view class="avatar">
+        <cover-image src="{{avatarSrc}}"></cover-image>
+      </view>
+      <text class="user-name">{{userName}}</text>
+    </view>
+    <text class="total-row" wx:if="{{totalRow}}">共 {{totalRow}} 条</text>
+  </view>
+  <view class="favorite-container">
+    <view class="favorite-inner">
+      <view class="favorite-item" wx:for="{{favoriteList}}" wx:for-item="favoriteItem" wx:key="favoriteItem.id" data-data="{{favoriteItem}}" bindtap="onClickItem">
+        <view class='item-query'>{{_filter.filterwrap(favoriteItem.queryText)}}</view>
+        <view class='item-result'>{{_filter.filterwrap(favoriteItem.transResult)}}</view>
+        <view class='star-btn' data-data="{{favoriteItem}}" catchtap="unStar">
+          <icon class='iconfont icon-star-active'></icon>
+        </view>
+      </view>
+    </view>
+    <empty-data wx:if="{{!favoriteList.length}}" text="暂无收藏" ext-class="ext-empty-data"></empty-data>
+  </view>
+</scroll-view>

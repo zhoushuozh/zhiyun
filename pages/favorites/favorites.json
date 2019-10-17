@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "empty-data": "../../components/empty-data/empty-data"
+  },
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true
+}

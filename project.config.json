@@ -1,4 +1,5 @@
 {
+	"cloudfunctionRoot": "functions/",
 	"description": "项目配置文件。",
 	"setting": {
 		"urlCheck": true,
@@ -9,12 +10,13 @@
 		"uglifyFileName": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.94",
+	"libVersion": "2.7.7",
 	"appid": "wxb580298690925bfd",
 	"projectname": "fanyi",
 	"isGameTourist": false,
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,

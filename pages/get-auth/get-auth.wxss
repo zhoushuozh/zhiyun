@@ -1,0 +1,14 @@
+/* pages/get-auth/get-auth.wxss */
+.login-container{
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+  padding: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container button{
+  width: 100%;
+}

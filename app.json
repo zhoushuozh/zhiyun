@@ -1,14 +1,36 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/history/history",
-    "pages/select-lang/select-lang"
+    "pages/select-lang/select-lang",
+    "pages/favorites/favorites",
+    "pages/translate/translate",
+    "pages/get-auth/get-auth"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#0099FF",
     "navigationBarTitleText": "知云翻译",
     "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#0099FF",
+    "backgroundColor": "white",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/img/icon-fanyi.png",
+        "selectedIconPath": "assets/img/icon-fanyi-active.png"
+      },
+      {
+        "pagePath": "pages/favorites/favorites",
+        "text": "收藏",
+        "iconPath": "assets/img/icon-star.png",
+        "selectedIconPath": "assets/img/icon-star-active.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }

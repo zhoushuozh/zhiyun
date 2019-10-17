@@ -1,0 +1,84 @@
+/* pages/favorites/favorites.wxss */
+.favorite-inner{
+  background: white;
+}
+.favorite-item{
+  line-height: 40rpx;
+  padding: 20rpx 40rpx;
+  min-height: 80rpx;
+  overflow-x: hidden;
+  position: relative;
+  padding-right: 100rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 32rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.favorite-item .item-query,
+.favorite-item .item-result {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.favorite-item .item-result {
+  color: #999;
+  font-size: 28rpx;
+}
+
+.favorite-item .iconfont {
+  color: #f4ea2a;
+  font-size: 36rpx;
+}
+
+.favorite-item .star-btn {
+  position: absolute;
+  line-height: 120rpx;
+  width: 80rpx;
+  text-align: center;
+  top: 0;
+  right: 20rpx;
+}
+
+.ext-empty-data{
+  margin-top: 200rpx;
+}
+
+.user-info{
+  background: #fff;
+  min-height: 100rpx;
+  margin-bottom: 10rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 40rpx;
+  color: #666;
+  font-size: 32rpx;
+  line-height: 100rpx
+}
+
+.user-info .left{
+  display: flex;
+  align-items: center;
+}
+
+.user-info .avatar{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1rpx solid #eee;
+  margin-right: 30rpx;
+}
+
+.user-info .avatar cover-image{
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user-info .total-row{
+  color: #999;
+  font-size: 28rpx;
+}
+
